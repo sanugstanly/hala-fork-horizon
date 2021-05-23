@@ -3,6 +3,7 @@ import Base from './base';
 import axios from 'axios';
 import Routes from './routes';
 import VueRouter from 'vue-router';
+import before from './middleware/before'
 import VueJsonPretty from 'vue-json-pretty';
 
 window.Popper = require('popper.js').default;
@@ -39,6 +40,8 @@ const router = new VueRouter({
     mode: 'history',
     base: routerBasePath,
 });
+
+router.beforeEach(before)
 
 Vue.component('vue-json-pretty', VueJsonPretty);
 Vue.component('alert', require('./components/Alert.vue').default);
