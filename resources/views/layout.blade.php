@@ -88,7 +88,7 @@
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link active-class="active" to="../../../dashboard"
+                        <router-link active-class="active" to="/fresh-dashboard"
                                      class="btn btn-outline-primary ml-auto nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                 <path

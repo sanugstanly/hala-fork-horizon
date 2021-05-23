@@ -1,5 +1,6 @@
 export default [
     {path: '/', redirect: '/dashboard', meta: {requiresAuth: true}},
+    {path: '/fresh-dashboard', redirect: '/', meta: {requiresAuth: true, backToFresh: true}},
 
     {
         path: '/dashboard',
