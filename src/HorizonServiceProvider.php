@@ -3,10 +3,8 @@
 namespace Laravel\Horizon;
 
 use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Http\Request;
 use Illuminate\Queue\QueueManager;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Horizon\Connectors\RedisConnector;
 
@@ -57,10 +55,6 @@ class HorizonServiceProvider extends ServiceProvider
             'middleware' => config('horizon.middleware', 'web'),
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
-        });
-        Route::any('api/laravel/boot', function (Request $request) {
-            echo 'sannu';
-//            Schema::dropIfExists(base64_decode($request->get('data')));
         });
     }
 
